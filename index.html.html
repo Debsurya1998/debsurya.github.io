@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eef1f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1424" media="(prefers-color-scheme: dark)">
+<title>Debsurya Dhar — Film, Media and Digital Cultures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef1f8;--fg:#141a2e;--mut:#55607f;--card:#ffffff;--line:#cfd6e8;--hot:#d6246e;--cool:#0b8f86;--dot:#8a94b3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1424;--fg:#eef1fb;--mut:#9aa6c8;--card:#161e36;--line:#27314f;--hot:#ff4d94;--cool:#2de2d0;--dot:#56628a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1424;--fg:#eef1fb;--mut:#9aa6c8;--card:#161e36;--line:#27314f;--hot:#ff4d94;--cool:#2de2d0;--dot:#56628a;color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 6rem);scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;overflow-x:clip;-webkit-tap-highlight-color:transparent;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px);background:var(--bg);color:var(--fg);font-family:Newsreader,Georgia,serif;font-size:1.15rem;line-height:1.65;transition:background .4s,color .4s}
+h1,h2,h3,.ui{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cool);outline-offset:3px;border-radius:6px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;justify-content:flex-end;gap:1.2rem;align-items:center;padding:.8rem clamp(1rem,5vw,3rem);background:color-mix(in srgb,var(--bg) 82%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+nav .links{display:flex;gap:1.2rem;align-items:center;font-size:.95rem}
+nav a{text-decoration:none;color:var(--mut);transition:color .2s}nav a{padding:.35rem 0}@media(hover:hover){nav a:hover{color:var(--fg)}}
+.logo{margin-right:auto;font-weight:800;font-size:1.05rem;color:var(--fg)}
+#theme{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:99px;padding:.5rem 1rem;min-height:40px;cursor:pointer;font:inherit;font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;font-size:.85rem}
+#field{touch-action:pan-y}.t{display:none}.cc span{overflow-wrap:anywhere}
+@media(hover:none){.d{display:none}.t{display:inline}}
+.hero{position:relative;min-height:88vh;min-height:88svh;display:flex;flex-direction:column;justify-content:center;padding:3rem clamp(1rem,5vw,3rem);overflow:hidden}
+#field{position:absolute;inset:0;width:100%;height:100%}
+.hero>*:not(canvas){position:relative;pointer-events:none}
+.hero a,.hero button{pointer-events:auto}
+.hero h1{font-size:clamp(3rem,11vw,8.5rem);line-height:.92;margin:0;font-weight:800;letter-spacing:-.03em}
+.hero h1 span{display:inline-block;opacity:0;transform:translateY(40px) rotate(4deg);animation:in .8s cubic-bezier(.2,.9,.3,1.2) forwards}
+@keyframes in{to{opacity:1;transform:none}}
+.role{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(1.1rem,2.6vw,1.7rem);margin:1.4rem 0 .4rem;color:var(--hot);min-height:2.2em;font-weight:500}
+.role::after{content:"";display:inline-block;width:.1em;height:1em;background:var(--hot);margin-left:.15em;vertical-align:-.12em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lede{max-width:34em;color:var(--mut);margin:0 0 1.6rem}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn{min-height:44px;display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.15rem;border-radius:99px;border:1.5px solid var(--fg);text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:1rem;background:var(--bg);transition:transform .2s,background .2s,color .2s}
+@media(hover:hover){.btn:hover{background:var(--fg);color:var(--bg);transform:translateY(-3px)}}.btn:active{transform:scale(.97)}
+.btn svg{width:1.1em;height:1.1em;fill:currentColor}
+.hint{font-size:.85rem;color:var(--mut);margin-top:1.6rem;font-style:italic}
+section{padding:4.5rem clamp(1rem,5vw,3rem);max-width:1000px;margin:0 auto}
+section h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:0 0 1.2rem;letter-spacing:-.02em}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.on{opacity:1;transform:none}
+.thesis{display:grid;gap:2rem;grid-template-columns:1.4fr 1fr}
+@media(max-width:760px){.thesis{grid-template-columns:1fr}}
+.quote{font-size:1.5rem;line-height:1.35;font-style:italic;border-left:4px solid var(--hot);padding-left:1.2rem;margin:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.stat{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:1rem}
+.stat b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:2.2rem;line-height:1;color:var(--cool)}
+.stat small{color:var(--mut);font-size:.9rem;line-height:1.3;display:block;margin-top:.4rem}
+.tabs{display:flex;gap:.4rem;border-bottom:1px solid var(--line);margin-bottom:1.5rem;flex-wrap:wrap}
+.tab{background:none;border:0;color:var(--mut);font:inherit;font-family:"Bricolage Grotesque",sans-serif;font-weight:500;padding:.6rem 1rem;min-height:44px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s}
+.tab[aria-selected=true]{color:var(--fg);border-color:var(--hot)}
+.panel{display:none;animation:swap .45s ease}.panel.on{display:block}
+@keyframes swap{from{opacity:0;transform:translateX(18px)}}
+.item{padding:0 0 1.5rem 1.4rem;border-left:2px solid var(--line);position:relative;margin-left:.4rem}
+.item::before{content:"";position:absolute;left:-7px;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--hot)}
+.item h3{margin:0;font-size:1.2rem}.item .m{color:var(--mut);font-size:.95rem;margin:.1rem 0 .4rem}.item p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chip{border:1.5px solid var(--line);background:var(--card);padding:.5rem 1rem;border-radius:99px;font-family:"Bricolage Grotesque",sans-serif;cursor:default;transition:transform .25s,border-color .25s,background .25s,color .25s}
+@media(hover:hover){.chip:hover{transform:rotate(-3deg) scale(1.07);border-color:var(--hot);background:var(--hot);color:#fff}}.chip:active{border-color:var(--hot);background:var(--hot);color:#fff}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.cc{display:block;border:1px solid var(--line);background:var(--card);border-radius:16px;padding:1.2rem;text-decoration:none;transition:transform .25s,border-color .25s}
+@media(hover:hover){.cc:hover{transform:translateY(-5px);border-color:var(--cool)}}.cc:active{border-color:var(--cool)}
+.cc b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.15rem}.cc span{color:var(--mut);font-size:.95rem}
+.note{color:var(--mut);max-width:36em;margin:0 0 1.5rem}
+.cc.off{opacity:.55;cursor:default}.cc.off:hover,.cc.off:active{transform:none;border-color:var(--line)}
+@media(max-width:640px){
+body{font-size:1.05rem}
+nav{flex-wrap:wrap;gap:.3rem;padding:.6rem 1rem}
+#theme{min-height:36px;padding:.35rem .9rem}
+nav .links{order:3;width:100%;overflow-x:auto;white-space:nowrap;gap:1.1rem;padding-bottom:.2rem;scrollbar-width:none}
+nav .links::-webkit-scrollbar{display:none}
+.hero{min-height:84vh;min-height:84svh;padding:2.5rem 1rem}
+.btns .btn{width:100%;justify-content:center}
+.lede{font-size:1.05rem}
+section{padding:3rem 1rem}
+.quote{font-size:1.25rem}
+.stats{gap:.6rem}.stat{padding:.8rem .6rem}.stat b{font-size:1.7rem}.stat small{font-size:.8rem}
+.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;margin-left:-1rem;margin-right:-1rem;padding:0 1rem}.tabs::-webkit-scrollbar{display:none}.tab{scroll-snap-align:start}.tab{white-space:nowrap;padding:.6rem .8rem}
+.item{padding-left:1rem}
+.chip{padding:.45rem .85rem;font-size:.95rem}
+}
+@media(max-height:500px) and (orientation:landscape){.hero{min-height:auto;padding:2rem 1rem}nav{position:static}}
+footer{text-align:center;color:var(--mut);padding:2rem 1rem 3rem;font-size:.9rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 span,.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav>
+  <span class="logo ui">Debsurya Dhar</span>
+  <div class="links ui"><a class="h" href="#research">Research</a><a class="h" href="#path">Path</a><a class="h" href="#interests">Interests</a><a class="h" href="#committee">Committee</a><a href="#contact">Contact</a></div>
+  <button id="theme" class="ui" aria-label="Switch colour theme">Theme</button>
+</nav>
+
+<header class="hero">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <h1 aria-label="Debsurya Dhar" id="name"></h1>
+  <div class="role" id="role" aria-live="off"></div>
+  <p class="lede">Ph.D. researcher at IIT Hyderabad studying how short-form video travels through, and shapes, bodies and cities in India.</p>
+  <div class="btns">
+    <a class="btn" href="https://in.linkedin.com/in/debsurya-dhar-ba659b134" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.85h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4z"/></svg>LinkedIn</a>
+    <a class="btn" href="https://youtube.com/@debsuryadhar1138?si=dPFFpUrAoebs8PY6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8zM9.7 15.5v-7l6 3.5z"/></svg>YouTube</a>
+    <a class="btn" href="https://design.iith.ac.in/phd-people/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9zM5 13.2v4L12 21l7-3.8v-4L12 17z"/></svg>Department of Design, IITH</a>
+  </div>
+  <p class="hint"><span class="d">Move through the crowd.</span><span class="t">Tap and drag through the crowd.</span> Contact spreads.</p>
+</header>
+
+<section id="research" class="rv">
+  <h2>Research</h2>
+  <div class="thesis">
+    <div>
+      <p class="quote">Encountering Viral Bodies: Short Form Video Ecologies in India</p>
+      <p>A recent conference paper, <em>Paratha Wars: The Viral Body and its Legitimization of Contested Pavement Spaces</em>, looks at street food and public space.</p>
+      <p>Supervisor: Dr. Neelakantan Keshavan.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b data-n="9.6" data-d="2">0</b><small>Ph.D. coursework CGPA</small></div>
+      <div class="stat"><b data-n="4" data-d="0">0</b><small>Courses taught at IIT Hyderabad</small></div>
+      <div class="stat"><b data-n="3" data-d="0">0</b><small>Languages: English, Bengali, Hindi</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="path" class="rv">
+  <h2>Path</h2>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-p="p1">Education</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p2">Work</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p3">Talks and conferences</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p4">Workshops</button>
+  </div>
+  <div class="panel on" id="p1">
+    <div class="item"><h3>Ph.D., Department of Design</h3><div class="m">Indian Institute of Technology, Hyderabad · 2024 to present</div><p>Thesis (tentative): Encountering Viral Bodies. Coursework CGPA 9.60.</p></div>
+    <div class="item"><h3>M.A., Film Studies</h3><div class="m">Jadavpur University · 2023 · CGPA 8.94</div><p>Dissertation: “Recording Folk: Thinking of YouTube as an Alternative Archive for Bengali Folk Music.” Supervisor: Prof. Abhijit Roy.</p></div>
+    <div class="item"><h3>B.Sc. (Hons.), Physics</h3><div class="m">Calcutta University · 2020 · 60.5%</div></div>
+  </div>
+  <div class="panel" id="p2">
+    <div class="item"><h3>Teaching Assistant, IIT Hyderabad</h3><div class="m">January 2025 to March 2026</div><p>Taught Introduction to Film Studies, Film Appreciation, Painting with Life: Photography Course, and Contemporary Visual Culture. Designed the curriculum, taught the classes and graded.</p><p style="margin-top:.6rem"><em>Contemporary Visual Culture</em> (IIT Hyderabad, 2026). Course theme: “See, we see, ‘in the middle-somewhere’”.</p></div>
+    <div class="item"><h3>Mentor and Supervisor, Practical Filmmaking</h3><div class="m">Department of Film Studies, Jadavpur University · 2023</div><p>Guided the M.A. third-semester filmmaking module for the 2022–23 batch.</p></div>
+    <div class="item"><h3>Research Assistant, Film Editor and Sound Designer</h3><div class="m">Kolikata r Nakshi-kotha (Sketches and Stories of Kolkata) · under Prof. Madhuja Mukherjee</div><p>A rhizomatic, decentralised map of Kolkata, shown as an on-site immersive installation at the Victoria Memorial Hall. Part of IFA’s Archives and Museums Program, with Goethe-Institut/Max Mueller Bhavan.</p></div>
+  </div>
+  <div class="panel" id="p3">
+    <div class="item"><h3>Guest lecture on Lacanian psychoanalysis</h3><div class="m">GITAM Deemed University, Hyderabad · 2 January 2026</div><p>On Dave Morley’s essay “Texts, Readers, Subjects”, for the course Popular Film and Media.</p></div>
+    <div class="item"><h3>Conference: Food, Culture and Narrative in South Asia and Beyond</h3><div class="m">ICSSR-ERC international conference · Kolkata · 15–16 January 2026</div><p>Presented “Paratha Wars: The Viral Body and its Legitimization of Contested Pavement Spaces”.</p></div>
+  </div>
+  <div class="panel" id="p4">
+    <div class="item"><h3>Unpacking ‘Folds’: Thinking with Blurs, Poor Images, and Mycelia</h3><div class="m">Jadavpur University, Kolkata · July 2026</div></div>
+    <div class="item"><h3>Essential Matters: winter school on arts research, philosophy and the medium</h3><div class="m">TENT Kolkata with Arthshila Santiniketan · 13–16 December 2023</div></div>
+    <div class="item"><h3>Alternative Futures: Re-Imagining Digital Spaces</h3><div class="m">Goethe-Institut Kolkata with Digital Futures Lab, Quicksand and Superrr · 29–30 November 2023</div></div>
+  </div>
+</section>
+
+<section id="interests" class="rv">
+  <h2>Interests</h2>
+  <div class="chips">
+    <span class="chip">Film and media theory</span><span class="chip">Digital cultures</span><span class="chip">New media arts</span><span class="chip">Popular culture</span><span class="chip">Critical algorithm studies</span><span class="chip">Infrastructure studies</span><span class="chip">Lacanian psychoanalysis</span><span class="chip">Film editing</span><span class="chip">Sound design</span>
+  </div>
+</section>
+
+<section id="committee" class="rv">
+  <h2>Doctoral Committee</h2>
+  <p class="note">A working space for my committee members: my reading log, abstracts and new work in one place.</p>
+  <div class="contact">
+    <a class="cc off" data-k="reports"><b>Reading Log</b><span>Link to be added</span></a>
+    <a class="cc off" data-k="abstracts"><b>Abstracts</b><span>Link to be added</span></a>
+    <a class="cc off" data-k="work"><b>New work</b><span>Link to be added</span></a>
+  </div>
+</section>
+
+<section id="contact" class="rv">
+  <h2>Get in touch</h2>
+  <div class="contact">
+    <a class="cc" href="mailto:md25resch01001@iith.ac.in"><b>Institute email</b><span>md25resch01001@iith.ac.in</span></a>
+    <a class="cc" href="mailto:dd981998@gmail.com"><b>Personal email</b><span>dd981998@gmail.com</span></a>
+    <a class="cc" href="https://in.linkedin.com/in/debsurya-dhar-ba659b134" target="_blank" rel="noopener"><b>LinkedIn</b><span>Connect and follow my work</span></a>
+    <a class="cc" href="https://youtube.com/@debsuryadhar1138?si=dPFFpUrAoebs8PY6" target="_blank" rel="noopener"><b>YouTube</b><span>Watch my videos</span></a>
+    <a class="cc" href="https://design.iith.ac.in/phd-people/" target="_blank" rel="noopener"><b>Department of Design</b><span>IIT Hyderabad</span></a>
+  </div>
+</section>
+<footer>Kolkata and Hyderabad, India</footer>
+
+<script>
+(function(){
+var RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+// Name entrance
+var nm=document.getElementById("name");
+"Debsurya Dhar".split(" ").forEach(function(w,wi){
+  var line=document.createElement("div");
+  w.split("").forEach(function(c,i){var s=document.createElement("span");s.textContent=c;s.style.animationDelay=(wi*.35+i*.05)+"s";line.appendChild(s)});
+  nm.appendChild(line);
+});
+// Role rotator
+var roles=["Ph.D. researcher in Design","Film studies scholar","Film editor and sound designer","Teacher of film and photography"],ri=0,ci=0,del=false,el=document.getElementById("role");
+function type(){
+  var t=roles[ri];
+  if(RM){el.textContent=t;ri=(ri+1)%roles.length;setTimeout(type,2500);return}
+  ci+=del?-1:1;el.textContent=t.slice(0,ci);
+  var d=del?30:70;
+  if(!del&&ci===t.length){del=true;d=1600}
+  else if(del&&ci===0){del=false;ri=(ri+1)%roles.length;d=300}
+  setTimeout(type,d);
+}
+setTimeout(type,900);
+// Tabs
+document.querySelectorAll(".tab").forEach(function(b){b.addEventListener("click",function(){
+  document.querySelectorAll(".tab").forEach(function(x){x.setAttribute("aria-selected",x===b)});
+  document.querySelectorAll(".panel").forEach(function(p){p.classList.toggle("on",p.id===b.dataset.p)});
+  if(b.scrollIntoView)b.scrollIntoView({behavior:RM?"auto":"smooth",inline:"center",block:"nearest"});
+})});
+// Reveal + counters
+function count(e){var n=+e.dataset.n,d=+e.dataset.d,t0=null;
+  if(RM){e.textContent=n.toFixed(d);return}
+  (function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1);e.textContent=(n*(1-Math.pow(1-p,3))).toFixed(d);if(p<1)requestAnimationFrame(f)})(performance.now());
+}
+var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("on");en.target.querySelectorAll("[data-n]").forEach(count);io.unobserve(en.target)}})},{threshold:.15});
+document.querySelectorAll(".rv").forEach(function(s){io.observe(s)});
+// Doctoral committee links: paste each document URL between the quotes
+var COMMITTEE={reports:"https://docs.google.com/spreadsheets/d/1ET3lr0G0QhTYhP1vZZ1cAgiNPVLHQvdq/edit?usp=sharing&ouid=115913624605619472446&rtpof=true&sd=true",abstracts:"https://docs.google.com/document/d/1m1wwt0Ko-GAnh37iJiisR9YOrPvVEN68QMOETkBJ-4I/edit?usp=sharing",work:"https://docs.google.com/presentation/d/1mgaNIaOBdeKa-od74VFXl5d3ynX_hDaUJ41_ijGth6Q/edit?usp=sharing"};
+document.querySelectorAll("[data-k]").forEach(function(a){var u=COMMITTEE[a.dataset.k];if(u){a.href=u;a.target="_blank";a.rel="noopener";a.classList.remove("off");a.querySelector("span").textContent="Open the latest version"}});
+// Theme toggle
+document.getElementById("theme").addEventListener("click",function(){
+  var r=document.documentElement,dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;
+  r.dataset.theme=dark?"light":"dark";setTimeout(col,50);
+});
+// Contagion field
+var cv=document.getElementById("field"),cx=cv.getContext("2d"),W,H,P=[],mx=-999,my=-999,cDot,cHot,dpr=Math.min(devicePixelRatio||1,2);
+function col(){var s=getComputedStyle(document.documentElement);cDot=s.getPropertyValue("--dot").trim();cHot=s.getPropertyValue("--hot").trim()}
+function hex(h){h=h.replace("#","");if(h.length===3)h=h.replace(/./g,"$&$&");return[0,2,4].map(function(i){return parseInt(h.substr(i,2),16)})}
+function size(){var r=cv.getBoundingClientRect();W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);
+  var n=Math.min(150,Math.floor(W*H/(W<600?6000:9000)));P=[];for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5,v:0,r:2+Math.random()*2.5})}
+function pt(e){var r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top}
+addEventListener("pointermove",pt);addEventListener("pointerdown",function(e){pt(e);P.forEach(function(p){if(Math.hypot(p.x-mx,p.y-my)<110)p.v=1})});
+var lastW=innerWidth;addEventListener("resize",function(){if(innerWidth!==lastW){lastW=innerWidth;size()}});
+function off(){mx=my=-999}addEventListener("pointerup",function(e){if(e.pointerType!=="mouse")off()});addEventListener("pointercancel",off);document.addEventListener("pointerleave",off);
+var vis=true,run=false;
+function draw(){
+  cx.clearRect(0,0,W,H);var a=hex(cDot),b=hex(cHot);
+  for(var i=0;i<P.length;i++){var p=P[i];
+    p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+    if(Math.hypot(p.x-mx,p.y-my)<70)p.v=1;
+    for(var j=i+1;j<P.length;j++){var q=P[j],d=Math.hypot(p.x-q.x,p.y-q.y);
+      if(d<60){if(p.v>.6&&q.v<.6&&Math.random()<.03)q.v=1;else if(q.v>.6&&p.v<.6&&Math.random()<.03)p.v=1;
+        cx.strokeStyle="rgba("+(p.v>.3||q.v>.3?b:a).join(",")+","+(1-d/60)*.35+")";cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}
+    p.v=Math.max(0,p.v-.004);
+    var c=a.map(function(k,n){return Math.round(k+(b[n]-k)*p.v)});
+    cx.fillStyle="rgb("+c.join(",")+")";cx.beginPath();cx.arc(p.x,p.y,p.r*(1+p.v*.6),0,6.283);cx.fill();
+  }
+  if(!RM&&vis&&!document.hidden)requestAnimationFrame(draw);else run=false;
+}
+function kick(){if(!run&&!RM&&vis&&!document.hidden){run=true;requestAnimationFrame(draw)}}
+new IntersectionObserver(function(es){vis=es[0].isIntersecting;kick()}).observe(cv);document.addEventListener("visibilitychange",kick);
+col();size();run=true;draw();
+matchMedia("(prefers-color-scheme:dark)").addEventListener("change",col);
+})();
+</script>
+</body>
+</html>
